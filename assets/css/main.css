@@ -1,6 +1,8 @@
 body{
   font-family: 'Roboto', sans-serif;
   overflow-x:hidden; 
+  padding:0;
+  margin:0;
 }
 
 a {
@@ -18,6 +20,7 @@ a {
 
 .coverpic{
   height:100vh;
+  max-width: 100%;
   background-attachment: scroll;   
 }
 
@@ -37,6 +40,8 @@ a {
   background: #F0F8FF;
 }
 
+
+
 .mid{
   text-align: center;
 }
@@ -47,7 +52,7 @@ a {
 }
 
 .content{
-  width: 1351px;
+  width: 100%;
   height:500px;
   position: absolute;
 }
