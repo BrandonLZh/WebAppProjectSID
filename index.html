@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
 	<!-- Bootstrap -->
     <link href="assets/css/bootstrap.css" rel="stylesheet"> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    
 
 
 </head>
@@ -58,10 +58,51 @@
 <div class="alicebluebackground content">
 	<div class="container">
 		<div class="primary">
-			<div class="col-md-12">
-				<h2 class="  text-align-center formfont"><b>Control Center</b></h2>
-
-
+			<div class="row col-md-12">
+				<h2 class="formfont"><b>Control Center</b></h2>
+			</div>
+		</div>
+		<div class="row">
+			<div class="row col-md-3">
+				<h4 class="text-align-center formfont">Status of SID:</h4>
+			</div>
+			<div class="row col-md-3">
+				<h4 id="SID" class ="text-align-center formfont">OFF</h4> 
+			</div>		
+		</div>
+		<div class="row">
+			<div class="row col-md-3">
+				<h4 class="text-align-center formfont">Temperature:</h4>
+			</div>
+			<div class="row col-md-3">
+				<h4 id="temp" class ="text-align-center formfont">N/A</h4> 
+			</div>		
+		</div>
+		<div class="row">
+			<div class="row col-md-3">
+				<h4 class="text-align-center formfont">Humidity:</h4>
+			</div>
+			<div class="row col-md-3">
+				<h4 id="hum" class ="text-align-center formfont">N/A</h4> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="row col-md-3">
+				<h4 class="text-align-center formfont">Light-refraction:</h4>
+			</div>
+			<div class="row col-md-3">
+				<h4 id="light" class ="text-align-center formfont">N/A</h4> 
+			</div>
+		</div>
+		<div class="row">
+			<div class="row col-md-3">
+				<h4 class="text-align-center formfont">Commands:</h4>
+			</div>
+			<div class="row col-md-1">
+				<button type="button" class="formfont">Reset</button>
+			</div>
+			<div class="row col-md-1">
+				<button type="button" class ="formfont">Record</button> 
 			</div>
 		</div>
 	</div>
@@ -70,10 +111,6 @@
 
 
 	<script src="assets/js/bz.js"></script>
-	<!--Stellar.js-->
-	<script src="assets/js/jquery-2.0.2.js"></script>
-	<script src="assets/js/jquery.stellar.min.js"></script>
-	<script>$('body').stellar();</script>
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="assets/js/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
