@@ -169,3 +169,29 @@ a {
 .footer-padding{
   padding-bottom: 20px; 
 }
+.connect-button{
+  width: 40%;
+}
+.custom-table{
+  background-color: white;
+}
+.button-align{
+  text-align: center;
+}
+
+.slidingDiv {
+height:300px;
+background-color: white;
+padding:20px;
+margin-top:10px;
+}
+
+.show_hide {
+display:none;
+}
+.align-button-right{
+  padding-left: 400px;
+}
+.graph-align{
+  text-align: center;
+}
