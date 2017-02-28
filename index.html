@@ -1,181 +1,206 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title> Project SID, The Ice Age is coming </title>
-	<link rel="stylesheet" type="text/css" href ="assets/css/main.css">
-	<link rel="stylesheet" type="text/css" href ="assets/css/font.css">
-	<!--Font-awesome icons-->
-	<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
-	<!-- Bootstrap -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
-    
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.1.js">
-	</script>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Project SID, The Ice Age is coming </title>
+		<link rel="stylesheet" type="text/css" href ="assets/css/main.css">
+		<link rel="stylesheet" type="text/css" href ="assets/css/font.css">
+		<!--Font-awesome icons-->
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<!-- Bootstrap -->
+	    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+	    
+	    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.1.js">
+		</script>
 
+		<!--  HIDE/SHOW Graph Script  -->
+	    <script type="text/javascript">
+			$(document).ready(function(){
+				$(".slidingDiv").hide();
+				$(".show_hide").show();
 
-	//HIDE SHOW SCRIPT
-    <script type="text/javascript">
-		$(document).ready(function(){
-			$(".slidingDiv").hide();
-			$(".show_hide").show();
+				$('.show_hide').click(function(){
+				$(".slidingDiv").slideToggle();
+				});
 
-			$('.show_hide').click(function(){
-			$(".slidingDiv").slideToggle();
 			});
+	    </script>
 
-		});
-    </script>
+	</head>
+	<body>
 
-
-</head>
-<SECTION>
-<body>
-<nav id="mybar" class="navbar-fixed-topp navbar-light bg-faded" >
-		<div class="navbar-header">
-			<img src="assets/img/dankicesym.png" class="symbol">
-		</div>
-			
-		<ul class="ele-to-right vh-mid">
-			<li class="inline">
-				<a class="active" href="#"><i class="fa fa-5x fa-home"></i>
-			</li>
-			<li class="inline">
-				<a href="#"><i class="fa fa-5x fa-globe"></i></a>
-			</li>	
-			<li class="inline">
-				<a href="#"><i class="fa fa-5x fa-envelope" ></i></a>
-			</li>
-		</ul>
-		
-	</nav>
-</SECTION>
-<SECTION>
-<div id="homeboi">
-<div class="coverpic" style="background-image: url('assets/img/danksid.jpg'); background-size:cover;"> 
-	<div class="container">
-	<div class="primary">
-		<div class="secondaryborder display-middle text-align-center large-padding stationary-background formfont">
-					<h1 class="font-title grey-font"><b>PROJECT SID</h1>
-					<div class="secondary">
-					<h2 class="grey-font">The ice age is here</h2>
+		<!--     Navbar Section     -->
+		<SECTION>
+			<nav id="navbar" class="navbar-fixed-top navbar  nav-style navbar-collapse" >
+				<div class="navbar-header">
+					<img src="assets/img/dankicesym.png" class="symbol navbar-brand">
 				</div>
-				</div>
-			</b>
-			<div>			
-		</div>
-	</div>
-</div>
-</SECTION>
-<SECTION>
-	<div class="alicebluebackground content">
-		<div class="container">
-			<div class="primary">
-				<div class="row col-md-12 " style="text-align: center;">
-					<h2 class="formfont heading"><b>Control Center</b></h2>
+				<!-- Page Navigation -->
+				<ul class="nav navbar-nav ">
+					<li class="nav-link-styling">
+						<a class="active link-style"><button class="btn btn-info btn-style">Control Center</button></a>
+					</li>
+					<li class="nav-link-styling ">
+						<a class="active link-style "><button class="btn btn-info btn-style ">About SID</button></a>
+					</li>
+				</ul>
+				<!-- Icons -->
+				<ul class="ele-to-right vh-mid">
+					<li class="inline">
+						<a class="active" href="#"><i class="fa fa-3x fa-home icon-style"></i>
+					</li>
+					<li class="inline">
+						<a href="#"><i class="fa fa-3x fa-globe icon-style"></i></a>
+					</li>	
+					<li class="inline">
+						<a href="#"><i class="fa fa-3x fa-envelope icon-style" ></i></a>
+					</li>
+				</ul>
+			</nav>
+		</SECTION>
+
+
+		<!--   Background image section   -->
+		<SECTION>
+			<div id="homeboi">
+				<div class="coverpic" style="background-image: url('assets/img/danksid.jpg'); background-size:cover; width: 100%;"> 
+					<div class="container">
+						<div class="primary">
+							<div class="secondaryborder display-middle text-align-center large-padding stationary-background formfont">
+								<h1 class="font-title grey-font"><b>PROJECT SID</b></h1>
+								<div class="secondary">
+									<h2 class="grey-font">The ice age is here</h2>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
+		</SECTION>
 
+
+		<!--   Control Center Section    -->
+		<SECTION>
 			<div class="container">
 				<div class="row">
-					<table class="table table-bordered custom-table"  width="244">
-						<thead>
-							<tr class="success">
-								<th>Metric</th>
-								<th>Value</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Device Status</td>
-								<td><h4 id="status" class ="text-align-center formfont">OFF</h4></td>
-							</tr>
-							<tr>
-								<td>Temperature
-								<a href="javascript:void(0)" class="show_hide align-button-right"><button class="btn btn-success ">Show/hide Temperature Graph</button></a>
-								<div class="slidingDiv graph-align">
-									<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/231429/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=30&title=Temperature+Over+Time&type=line&xaxis=Time&yaxis=Degrees+Celsius"></iframe>
-
+					<div class="alicebluebackground content">
+						<div class="primary">
+							<div class="row col-md-12 " style="text-align: center;">
+								<h2 class="formfont heading"><b>Control Center</b></h2>
+							</div>
+							<div class="container">
+								<div class="row">
+									<!-- Information Display Table -->
+									<table class="table table-bordered custom-table"  width="244">
+										<thead>
+											<tr class="success">
+												<th>Metric</th>
+												<th>Value</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>Device Status</td>
+												<td><h4 id="status" class ="text-align-center formfont">OFF</h4></td>
+											</tr>
+											<tr>
+												<td>Temperature
+													<a href="javascript:void(0)" class="show_hide align-button-right"><button class="btn btn-success ">Show/hide Temperature Graph</button></a>
+													<div class="slidingDiv graph-align">
+														<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/231429/charts/1?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=30&title=Temperature+Over+Time&type=line&xaxis=Time&yaxis=Degrees+Celsius"></iframe>
+													</div>
+												</td>
+												<td><h4 id="temperature" class ="text-align-center formfont">N/A</h4></td>
+											</tr>
+											<tr>
+												<td>Humidity</td>
+												<td><h4 id="humidity"  class ="text-align-center formfont">N/A</h4></td>
+											</tr>
+											<tr>
+												<td>Reflection Sensor</td>
+												<td><h4 id="light" class ="text-align-center formfont">N/A</h4></td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								</td>
-								<td><h4 id="temperature" class ="text-align-center formfont">N/A</h4></td>
-							</tr>
-							<tr>
-								<td>Humidity</td>
-								<td><h4 id="humidity"  class ="text-align-center formfont">N/A</h4></td>
-							</tr>
-							<tr>
-								<td>Reflection Sensor</td>
-								<td><h4 id="light" class ="text-align-center formfont">N/A</h4></td>
-							</tr>
-							
-						</tbody>
-					</table>
-				</div>
-			</div>
-			<div class="row button-align">
-				<button type="button" class="btn btn-success connect-button" onclick="start()">Connect</button>
-			</div>
+							</div>
+							<div class="container">
+								<div class="row">
+									<div class="row button-align">
+										<button type="button" class="btn btn-success connect-button" onclick="start()">Connect</button>
+									</div>
+								</div>
+								<br>
+								<div>
+									<span id="tstamp"></span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>	
+		</SECTION>
 
-			<br>
-			<span id="tstamp"></span>
-			<br>
-		</div>
-	</div>		
-</SECTION>
+		<!-- Footer Section -->
+		<SECTION>
+		<div class="container">
+			<footer class="foot-style">
+		    	<p class="position-bottom"><a href="#">Back to top</a></p>
+		    	<p class="float-right">&copy; 2017 Project SID &middot; <a href="https://www.carleton.ca">Created at Carleton University</a> &middot; </p>
+		     </footer>
+		     </div>
+		</SECTION>
    
 
-    <script type="text/javascript">
-    
-	function start() {
+	<!---    Script for retriving data from Particle Cloud    -->
+    <script type="text/javascript"> 
+		function start() {
 
-        document.getElementById("temperature").innerHTML = "Waiting for data...";
-		document.getElementById("humidity").innerHTML = "Waiting for data...";
-		
-        var deviceID = "3f0058001451353432393433";
-        var accessToken = "eec64f717ccc44b7cb540806dbdea06d701cbadc";
-        var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
+	        document.getElementById("temperature").innerHTML = "Waiting for data...";
+			document.getElementById("humidity").innerHTML = "Waiting for data...";
+			
+	        var deviceID = "3f0058001451353432393433";
+	        var accessToken = "eec64f717ccc44b7cb540806dbdea06d701cbadc";
+	        var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
 
-        eventSource.addEventListener('open', function(e) {
-            console.log("Opened!");  
-			document.getElementById("status").innerHTML = "Active";
-			},false);
+	        eventSource.addEventListener('open', function(e) {
+	            console.log("Opened!");  
+				document.getElementById("status").innerHTML = "Reached Paticle Cloud, Device inactive";
+				},false);
+	        eventSource.addEventListener('active', function(e) {
+	            console.log("Opened!");  
+				document.getElementById("status").innerHTML = "Active";
+				},false);
 
-        eventSource.addEventListener('error', function(e) {
-            console.log("Errored!"); 
-			document.getElementById("status").innerHTML = "Error!";
-			},false);
+	        eventSource.addEventListener('error', function(e) {
+	            console.log("Errored!"); 
+				document.getElementById("status").innerHTML = "Error!";
+				},false);
 
-        eventSource.addEventListener('temperature', function(e) {
-            var parsedData = JSON.parse(e.data);
-            var tempSpan = document.getElementById("temperature");
-            var tsSpan   = document.getElementById("tstamp");
-            tempSpan.innerHTML =  " " + parsedData.data + " ";
-            tempSpan.style.fontSize = "18px";
-            tsSpan.innerHTML = "At timestamp " + parsedData.published_at;
-            tsSpan.style.fontSize = "12px";
-        }, false);
-		
-		eventSource.addEventListener('humidity', function(e) {
-            var parsedData = JSON.parse(e.data);
-            var tempSpan = document.getElementById("humidity");
-            var tsSpan   = document.getElementById("tstamp");
-            tempSpan.innerHTML =  " " + parsedData.data + " ";
-            tempSpan.style.fontSize = "18px";
-            tsSpan.innerHTML = "At timestamp " + parsedData.published_at;
-            tsSpan.style.fontSize = "12px";
-        }, false);
-    }
+	        eventSource.addEventListener('temperature', function(e) {
+	            var parsedData = JSON.parse(e.data);
+	            var tempSpan = document.getElementById("temperature");
+	            var tsSpan   = document.getElementById("tstamp");
+	            tempSpan.innerHTML =  " " + parsedData.data + " ";
+	            tempSpan.style.fontSize = "18px";
+	            tsSpan.innerHTML = "At timestamp " + parsedData.published_at;
+	            tsSpan.style.fontSize = "12px";
+	        }, false);
+			
+			eventSource.addEventListener('humidity', function(e) {
+	            var parsedData = JSON.parse(e.data);
+	            var tempSpan = document.getElementById("humidity");
+	            var tsSpan   = document.getElementById("tstamp");
+	            tempSpan.innerHTML =  " " + parsedData.data + " ";
+	            tempSpan.style.fontSize = "18px";
+	            tsSpan.innerHTML = "At timestamp " + parsedData.published_at;
+	            tsSpan.style.fontSize = "12px";
+	        }, false);
+	    }
 	
     </script>
 
-	
-
-
-</body>
-</html>
-
-</body>
+	</body>
 </html>
