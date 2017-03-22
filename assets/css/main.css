@@ -211,7 +211,8 @@ display:none;
   padding-top: 100px;
 }
 .about-section{
-  padding-top: 200px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 .title-padding{
   padding-top: 30px !important;
@@ -247,4 +248,7 @@ display:none;
 } 
 .toggle-pad{
   margin-top: 25px !important;
+}
+.logo-text{
+ 
 }
