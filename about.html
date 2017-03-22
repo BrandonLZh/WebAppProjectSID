@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+		<title> Project SID, The Ice Age is coming </title>
+		<link rel="stylesheet" type="text/css" href ="assets/css/main.css">
+		<link rel="stylesheet" type="text/css" href ="assets/css/font.css">
+		<!--Font-awesome icons-->
+		<link rel="stylesheet" type="text/css" href="assets/css/font-awesome.min.css">
+		<!-- Bootstrap -->
+	    <link href="assets/css/bootstrap.css" rel="stylesheet"> 
+	    
+	    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.5.1.js">
+		</script>
+
+		<!--  HIDE/SHOW Graph Script  -->
+	    <script type="text/javascript">
+			$(document).ready(function(){
+				$(".slidingDiv").hide();
+				$(".show_hide").show();
+
+				$('.show_hide').click(function(){
+				$(".slidingDiv").slideToggle();
+				});
+
+			});
+	    </script>
+
+	</head>
+	<body>
+
+
+			<nav class="navbar navbar-fixed-top navbar-inverse " data-toggle="collapse" data-target=".nav-collapse">
+			  <div class="container-fluid">
+			    <div class="navbar-header ">
+			      <button type="button" class="navbar-toggle toggle-pad" id="nav-main" data-toggle="collapse" data-target="#myNavbar">
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>                        
+			      </button>
+				  <a href="#top"><img src="assets/img/dankicesym.png" class="symbol navbar-brand"></a>
+			      <a class="navbar-brand title-padding" href="#top">Project SID</a>
+			    </div>
+			    <div class="collapse navbar-collapse" id="myNavbar">
+			      <ul class="nav navbar-nav header-link-padding">
+			        <li><a href="#control-center">Control Center</a></li>
+			        <li><a href="about.html">About</a></li>
+			      </ul>
+			      <ul class="nav navbar-nav navbar-right icon-padding">
+			        <li><a href="https://thingspeak.com/channels/235726" title="Data logging on thingspeak"><span class="fa fa-2x fa-connectdevelop"></span></a></li>
+			        <li><a href="https://twitter.com/Project_SID_17" title="SID's twitter page"><span class="fa fa-2x fa-twitter"></span></a></li>
+			      </ul>
+			    </div>
+			  </div>
+			</nav>
+		</SECTION>
+
+
+		<!--   Background image section   -->
+		<SECTION>
+			<div id="homeboi">
+				<div class="coverpic coverpic-small" style="background-image: url('assets/img/danksid.jpg'); background-size:cover; width: 100%;"> 
+					<div class="container">
+						<div class="primary">
+							<div class="secondaryborder display-middle text-align-center large-padding stationary-background formfont front-titles">
+								<h1 class="font-title grey-font front-titles"><b>PROJECT SID</b></h1>
+								<div class="secondary">
+									<h2 class="grey-font front-titles">The ice age is here</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</SECTION>
+
+		<SECTION>
+			<div class="container about-section">
+				Heading.
+				<div class="row">
+					
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						Image
+					</div>
+					<div class="col-md-6">
+						<p>Project SID is a 3rd Year Electrical Engineering innitiative from 6 students at Carleton University. The intent is to
+						use SID at the private residence of a user to keep track of the conditions of their driveway and the possible conditions of the surrounding area.
+						Since this is a proof of concept, we have not fleshed out all kinks for widespan commertial use, as this presents multiple challenges, 
+						rather this product is intended as a stepping stone product to show a technique for ice and snow detection using platic fibre optic cable, and ambient temperature and humidity sensors. </p>
+					</div>
+				</div>
+			</div>
+		</SECTION>
+
+
+
+		<!-- Footer Section -->
+		<SECTION>
+		<div class="container">
+			<footer class="foot-style">
+		    	<p class="position-bottom"><a href="#">Back to top</a></p>
+		    	<p class="float-right">&copy; 2017 Project SID &middot; <a href="https://www.carleton.ca">Created at Carleton University</a> &middot; </p>
+		     </footer>
+		     </div>
+		</SECTION>
+   
+
+	</body>
+</html>

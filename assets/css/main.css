@@ -1,7 +1,7 @@
 body{
-  font-family: 'Roboto', sans-serif;
+  font-family: arial, sans-serif !important;
   overflow-x:hidden; 
-  padding:0;
+  padding-top: 50px;
   margin:0;
 }
 
@@ -9,16 +9,8 @@ a {
   color:#ffffff;
 }
 
-
 .iconsize{
   font-size: 6.00em;
-}
-
-.coverpic{
-  margin-top: 80px;
-  height:100vh;
-  max-width: 100%;
-  background-attachment: scroll;   
 }
 
 .greybackground{
@@ -36,9 +28,6 @@ a {
 .alicebluebackground{
   background: #F0F8FF;
 }
-
-
-
 .mid{
   text-align: center;
 }
@@ -154,62 +143,47 @@ a {
 .connect-button{
   width: 40%;
 }
+.temp-button{
+  width: 42%;
+}
 .custom-table{
   background-color: white;
 }
 .button-align{
   text-align: center;
 }
-
+/*
 .slidingDiv {
   height:300px;
   background-color: white;
   padding:20px;
   margin-top:10px;
-}
+}*/
 
 .show_hide {
 display:none;
 }
+
 .align-button-right{
-  padding-left: 400px;
+  text-align: right;
 }
-.graph-align{
-  text-align: center;
-}
-.nav-style{
- height: 80px !important;
- background-color: black !important;
- border-color: black !important;   
-}
+
 .symbol{
   width: 80px !important;
   height: 80px !important;
 }
 .nav-link-styling{
   font-family: "helvetica" !important;
+  text-align: center;
   font-size: 18px;
   padding-top: 0px;
-  padding-left: 20px;
+  padding-left:   0px;
   height: 100%;
 }
 .icon-style{
   padding-top: 15px;
 }
-.btn-style{
-  width: 120px !important;
-  height: 50px !important;
-  background-color: transparent !important;
-  border-color: transparent !important;
-  outline: 0 !important;
-  color: #2b9ddb !important;
-  font-size: 15px !important;
-  text-align: center !important;
-}
-a:hover{
-  background-color: white !important;
-  transition: 0.3s ease-in  !important;
-}
+
 .position-bottom{
   position: absolute;
 }
@@ -218,4 +192,59 @@ a:hover{
 }
 .foot-style{
   padding-top: 50px;
+}
+.btn-padding{
+  padding-left: 100px;
+  padding-top: 10px !important;
+}
+.iframe-padding{
+  padding-top: 20px;
+  text-align: center;   
+}
+.link-style{
+  text-align: center;
+}
+.timestamp{
+  text-align: center !important;
+}
+.control-center-padding{
+  padding-top: 100px;
+}
+.about-section{
+  padding-top: 200px;
+}
+.title-padding{
+  padding-top: 30px !important;
+  padding-left: 30px !important;
+  font-size: 22px !important;
+}
+.header-link-padding{
+  padding-top: 15px !important;
+  padding-left: 10px !important;
+  font-size: 18px !important;
+}
+.icon-padding{
+  padding-top: 10px !important;
+  padding-right: 20px !important;
+   padding-left: 10px !important;
+
+}
+.coverpic{
+      height:100vh;
+      max-width: 100%;
+      width: auto;
+      background-attachment: scroll;   
+}
+
+@media(max-width:768px){
+    .coverpic{
+      width: 100px;
+      height: 400px;
+    }
+    .front-titles{
+      display: none;
+    }
+} 
+.toggle-pad{
+  margin-top: 25px !important;
 }
