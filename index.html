@@ -5,6 +5,7 @@
 	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	    <meta name="viewport" content="width=device-width, initial-scale=1">
 		<title> Project SID, The Ice Age is coming </title>
+		<link rel="icon" href="assets/img/dankicesym.png">
 		<link rel="stylesheet" type="text/css" href ="assets/css/main.css">
 		<link rel="stylesheet" type="text/css" href ="assets/css/font.css">
 		<!--Font-awesome icons-->
@@ -30,7 +31,6 @@
 
 			});
 	    </script>
-
 	</head>
 	<body>
 
@@ -81,9 +81,6 @@
 			</div>
 		</SECTION>
 
-
-
-
 		<!--   Control Center Section    -->
 		<SECTION class="control-center-padding">
 		<a id="control-center"></a>
@@ -104,8 +101,8 @@
 								</thead>
 								<tbody>
 									<tr >
-										<td class="col-xs-6">Device Status</td>
-										<td  id="status-div" class="col-xs-6"><h4 id="status" class ="text-align-center formfont">Inactive</h4></td>
+										<td class="col-xs-6"><h5>Device Status </h5><div class="loader loading" id="loader" style="visibility: hidden;"></div></td>
+										<td  id="status-div" class="col-xs-6"><h4 id="status" class ="text-align-center formfont">Inactive</h4> </td>
 									</tr>
 									<tr>
 										<td class="col-xs-6">Temperature
@@ -118,18 +115,21 @@
 									</tr>
 									<tr>
 										<td class="col-xs-6"> Reflection Sensor</td>
-										<td class="col-xs-6"><h4 id="light" class ="text-align-center formfont">N/A</h4></td>
+										<td class="col-xs-6"><h4 id="rawValue" class ="text-align-center formfont">N/A</h4></td>
 									</tr>
 								</tbody>
-							</table>
+							</table> 
 							<div class="timestamp">
-								<span  id="tstamp"></span>
+								<span id="tstamp"></span>
+								
 							</div>
+							
 						</div>
 					</div>
 					<br>
 					<div class="container">
 						<div class="row">
+
 							<div class="row button-align">
 								<button type="button" class="btn btn-success connect-button" onclick="start()">Connect</button>
 							</div>
@@ -162,7 +162,8 @@
 								<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/235726/charts/2?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=60&title=Humidity+%28%25%29&type=line&xaxis=Time+&yaxis=Percentage"></iframe>
 							</div>
 							<div class="slidingDiv iframe-padding">
-								<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/235726/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=20&title=Light+Reading&type=line&xaxis=Time&yaxis=Raw+Light+Value"></iframe>
+								<iframe width="450" height="260" style="border: 1px solid #cccccc;" src="https://thingspeak.com/channels/235726/charts/3?bgcolor=%23ffffff&color=%23d62020&dynamic=true&results=100&title=Light+Reading&type=line&xaxis=Time&yaxis=Raw+Light+Value&yaxismax=4000&yaxismin=2000"></iframe>
+
 							</div>
 						</div>
 					</div>
@@ -189,17 +190,23 @@
     <script type="text/javascript"> 
 		function start() {
 
+			document.getElementById("loader").style.visibility = "visible";
+
 	        document.getElementById("temperature").innerHTML = "Waiting for data...";
 			document.getElementById("humidity").innerHTML = "Waiting for data...";
+			document.getElementById("rawValue").innerHTML = "Waiting for data...";
+
 			
-	        var deviceID = "3b003a000247353138383138";
-	        var accessToken = "f902283102d71b9047eb078869105ec2f83f3a27";
+			
+	        var deviceID = "3f0058001451353432393433";
+	        var accessToken = "eec64f717ccc44b7cb540806dbdea06d701cbadc";
 	        var eventSource = new EventSource("https://api.spark.io/v1/devices/" + deviceID + "/events/?access_token=" + accessToken);
 
 	        eventSource.addEventListener('open', function(e) {
 	            console.log("Opened!");  
 				document.getElementById("status").innerHTML = "Active";
 				$('#status-div').css('background-color', 'green');
+
 				},false);
 
 	        eventSource.addEventListener('error', function(e) {
@@ -208,6 +215,7 @@
 				$('#status-div').css('background-color', 'red');
 				},false);
 
+	        //TEMPERATURE SENSOR DATA
 	        eventSource.addEventListener('temperature', function(e) {
 	            var parsedData = JSON.parse(e.data);
 	            var tempSpan = document.getElementById("temperature");
@@ -216,8 +224,10 @@
 	            tempSpan.style.fontSize = "18px";
 	            tsSpan.innerHTML = "Last data collection at: " + parsedData.published_at;
 	            tsSpan.style.fontSize = "12px";
+
 	        }, false);
 			
+			//HUMIDITY SENSOR DATA
 			eventSource.addEventListener('humidity', function(e) {
 	            var parsedData = JSON.parse(e.data);
 	            var tempSpan = document.getElementById("humidity");
@@ -228,6 +238,18 @@
 	            tsSpan.style.fontSize = "12px";
 	        }, false);
 
+			//LIGHT SENSOR DATA
+	        eventSource.addEventListener('rawValue', function(e) {
+	            var parsedData = JSON.parse(e.data);
+	            var tempSpan = document.getElementById("rawValue");
+	            var tsSpan   = document.getElementById("tstamp");
+	            tempSpan.innerHTML =  " " + parsedData.data + " ";
+	            tempSpan.style.fontSize = "18px";
+	            tsSpan.innerHTML = "Last data collection at: " + parsedData.published_at;
+	            tsSpan.style.fontSize = "12px";
+	        }, false);
+
+
 			document.getElementById("close").addEventListener("click", function(){
 				eventSource.close();
             	console.log("Event Source Closed");
@@ -237,6 +259,8 @@
 
 				document.getElementById("temperature").innerHTML = "N/A";
 				document.getElementById("humidity").innerHTML = "N/A";
+				document.getElementById("rawValue").innerHTML = "N/A";
+				document.getElementById("loader").style.visibility = "hidden";
 	     	});
 	    }
     </script>
@@ -263,8 +287,8 @@
 	<!-- Script for sending reset command -->
 	<script>
 
-		var accessToken = "f902283102d71b9047eb078869105ec2f83f3a27";
-		var deviceID = "3b003a000247353138383138";
+		var accessToken = "eec64f717ccc44b7cb540806dbdea06d701cbadc";
+		var deviceID = "3f0058001451353432393433";
 		spark.on('login', function(response) {   
 		    console.log(response);   
 		    });
